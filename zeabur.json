@@ -1,8 +1,27 @@
 {
   "$schema": "https://schema.zeabur.app/zeabur.json",
   "build": {
-    "type": "static",
-    "build_command": "npm run build",
-    "output_dir": "dist"
-  }
+    "type": "prebuilt-image",
+    "image": "eceasy/cli-proxy-api:latest"
+  },
+  "ports": [8317],
+  "env": {
+    "DEPLOY": {
+      "default": "",
+      "expose": true
+    }
+  },
+  "configs": [
+    "/CLIProxyAPI/config.yaml"
+  ],
+  "volumes": [
+    {
+      "id": "auth-data",
+      "dir": "/root/.cli-proxy-api"
+    },
+    {
+      "id": "logs",
+      "dir": "/CLIProxyAPI/logs"
+    }
+  ]
 }
