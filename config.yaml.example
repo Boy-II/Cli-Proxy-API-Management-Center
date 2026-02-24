@@ -1,0 +1,25 @@
+port: 8317
+auth-dir: "/root/.cli-proxy-api"
+remote-management:
+  allow-remote: true
+  secret-key: "your-secret-key-here"
+request-retry: 3
+quota-exceeded:
+  switch-project: true
+  switch-preview-model: true
+api-keys:
+  - "your-api-key-here"
+usage-statistics-enabled: true
+gemini-api-key:
+  - api-key: your-gemini-api-key-here
+    excluded-models:
+      - '*'
+oauth-model-alias:
+  vertex:
+    - name: gemini-3-pro-preview
+      alias: V-3.0P
+      fork: true
+  antigravity:
+    - name: gemini-2.5-flash
+      alias: A-2.5F
+      fork: true

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://schema.zeabur.app/zeabur.json",
+  "build": {
+    "type": "static",
+    "build_command": "npm run build",
+    "output_dir": "dist"
+  }
+}
